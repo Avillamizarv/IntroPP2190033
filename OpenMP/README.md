@@ -1,2 +1,3 @@
-# IntroPP2190033
-Repositorio donde se alojan los proyectos de la estudiante Adriana Villamizar Vera (2190033) desarrollados para la clase de introducción a la computación paralela 2023-2
+# OpenMP
+En este directorio se encuentra implementación de un programa para multiplicación de matrices en lenguaje C secuencial (multiplyMatrix.c) y la misma solución pero con programación paralela (omp_multiplyMatrix.c) y el análisis comparativo entre ambas soluciones.
+
