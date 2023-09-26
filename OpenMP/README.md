@@ -9,7 +9,9 @@ Para la solución utilizando paralelismo, se agrega sobre los ciclos for de la m
 
 Ambos programas se corrieron en el equipo local con las siguientes especificaciones:
 
-Procesador: intel corei3
+Procesador: intel corei3-1005G1 CPU
+Frecuencia: 1.20 GHz
+RAM: 12 GB
 
 Al ejecutar la solución programada secuencialmente, el tiempo de ejecución es de   3.000000 ms
 ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/daad72b5-d6d0-4730-9dfa-a0e8e618ba35)
