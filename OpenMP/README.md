@@ -7,6 +7,9 @@ Se hacen algunas modificaciones para recibir como entrada las dimensiones de amb
 
 Para la solución utilizando paralelismo, se agrega sobre los ciclos for de la multiplicación de matrices la notación #pragma omp parallel for.
 
+Ambos programas se corrieron en el equipo local con las siguientes especificaciones:
+Procesador: intel corei3
+
 Al ejecutar la solución programada secuencialmente, el tiempo de ejecución es de   3.000000 ms
 ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/daad72b5-d6d0-4730-9dfa-a0e8e618ba35)
 
