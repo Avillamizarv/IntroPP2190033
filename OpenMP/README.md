@@ -1,6 +1,12 @@
 # OpenMP
 En este directorio se encuentra implementación de un programa para multiplicación de matrices en lenguaje C secuencial (multiplyMatrix.c) y la misma solución pero con programación paralela (omp_multiplyMatrix.c) y el análisis comparativo entre los tiempos de ejecución de ambas soluciones.
 
+Se toma como base el código fuente recomendado que se encuentra en el siguiente enlace: https://www.geeksforgeeks.org/c-matrix-multiplication/ 
+
+Se hacen algunas modificaciones para recibir como entrada las dimensiones de ambas matrices y se llenan con números aleatorios entre 0 y 10.
+
+Para la solución utilizando paralelismo, se agrega sobre los ciclos for de la multiplicación de matrices la notación #pragma omp parallel for.
+
 Al ejecutar la solución programada secuencialmente, el tiempo de ejecución es de   3.000000 ms
 ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/daad72b5-d6d0-4730-9dfa-a0e8e618ba35)
 
