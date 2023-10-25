@@ -43,88 +43,88 @@ Estando conectados a guane (ssh guane):
   
 5.  Ejecutamos el comando "make" con el cual se compilará el programa con las opciones que se encuentran dentro del archivo Makefile. Originalmente se compila con opción de optimización -03 y el flag de mostrar los warnings activado.
 
-   ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/66f545c3-69cc-4b95-87d7-83b96f8b11ed)
+         ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/66f545c3-69cc-4b95-87d7-83b96f8b11ed)
 
    
 6.  Ejecutamos el programa con el siguiente comando (con 2 procesos):
 
-  mpirun -np 2 ./heat_mpi
-
-  ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/a51b0db4-8f1a-4b88-a467-bf8271c186a1)
-
-  En este caso el tiempo fue de: 36.964 sg
+        mpirun -np 2 ./heat_mpi
+      
+        ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/a51b0db4-8f1a-4b88-a467-bf8271c186a1)
+      
+        En este caso el tiempo fue de: 36.964 sg
   
 7.  Ahora, hacemos la ejecución usando el campo inicial con el archivo  bottle.dat:
 
-   mpirun -np 2 ./heat_mpi bottle.dat
-
-   ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/7aa1a7f5-fc28-4266-944b-498b13830810)
-
- En este caso el tiempo fue de: 37.401 sg
+         mpirun -np 2 ./heat_mpi bottle.dat
+      
+         ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/7aa1a7f5-fc28-4266-944b-498b13830810)
+      
+         En este caso el tiempo fue de: 37.401 sg
  
 8.  Probamos dando el número de pasos de tiempo:
 
-    mpirun -np 2 ./heat_mpi bottle.dat 1000
-
-    ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/83eb4fb1-a8a5-42a8-baae-2b6fe7555f0a)
-
-
-    En este caso el tiempo fue de: 75.787  sg
+          mpirun -np 2 ./heat_mpi bottle.dat 1000
+      
+          ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/83eb4fb1-a8a5-42a8-baae-2b6fe7555f0a)
+      
+      
+          En este caso el tiempo fue de: 75.787  sg
   
 9.  También hacemos la ejecución dando las dimensiones y pasos de tiempo del patrón predeterminado:
 
-    mpirun -np 2 ./heat_mpi 800 800 1000
-    
-    ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/098b58bc-a20e-4b25-baa3-806b0f5a8056)
-
-    En este caso el tiempo fue de: 76.758 sg
+          mpirun -np 2 ./heat_mpi 800 800 1000
+          
+          ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/098b58bc-a20e-4b25-baa3-806b0f5a8056)
+      
+          En este caso el tiempo fue de: 76.758 sg
     
 10. Cada una de las anteriores ejecuciones produce una serie de imagenes en formato PNG, a continuación se muestran algunas de ellas correspondientes a las ejecuciones con mejor y peor desempeño respectivamente.
 
-    Mejor desemepeño (pt 7):
-    
-    ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/d706faa8-99b1-4ef9-8035-b520bcaa863e)
-    ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/690b86ff-2b65-4e50-8e5d-4e93ccf9247a)
-    ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/bfaf56e6-8d9b-42b8-9193-cf097db63583)
-
-
-    Peor desempeño (pt 10):
-
-    ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/efacadfe-20a6-4589-8672-46ccb2a2f0f8)
-    ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/6e91114d-3ad2-4e9e-8ba1-693bb1933a0f)
-    ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/f636bdad-618f-4738-8444-83bfbb9107b7)
-    
+          Mejor desemepeño (pt 7):
+          
+          ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/d706faa8-99b1-4ef9-8035-b520bcaa863e)
+          ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/690b86ff-2b65-4e50-8e5d-4e93ccf9247a)
+          ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/bfaf56e6-8d9b-42b8-9193-cf097db63583)
+      
+      
+          Peor desempeño (pt 10):
+      
+          ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/efacadfe-20a6-4589-8672-46ccb2a2f0f8)
+          ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/6e91114d-3ad2-4e9e-8ba1-693bb1933a0f)
+          ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/f636bdad-618f-4738-8444-83bfbb9107b7)
+          
 
     MODIFICACIONES
     
 11. Si cambiamos el número de procesos a la hora de ejecutar el programa, vemos una diferencia en los tiempos de ejecución, los resultados quedan de la siguiente manera:
 
-      X(# prcs)-------->T(sg)
+            X(# prcs)-------->T(sg)
+      
+            2-----------------36.964
+          
+            4-----------------5.202
+          
+            8-----------------63.902
+    
 
-      2-----------------36.964
-    
-      4-----------------5.202
-    
-      8-----------------63.902
-    
-
-    El mejor desempeño se obtiene cuando se utilizan 4 procesos.
+          El mejor desempeño se obtiene cuando se utilizan 4 procesos.
     
 13. Si cambiamos la opción de optimización a la hora de compilar (abriendo el archivo Makefile y cambiando -O3 por cada una de las distintas opciones), tenemos los siguientes resultados:
 
-    Opción de compilación ----------> T(sg)
-
-    ninguna--------------------------21.554
-    
-    -O1------------------------------39.441
-    
-    -O2------------------------------9.523
-    
-    -O3------------------------------5.202
-    
-
-    La mejor opción de optimización en la compilación es la -O3, es decir, la que ya viene en el programa original
-    
+          Opción de compilación ----------> T(sg)
+      
+          ninguna--------------------------21.554
+          
+          -O1------------------------------39.441
+          
+          -O2------------------------------9.523
+          
+          -O3------------------------------5.202
+          
+      
+          La mejor opción de optimización en la compilación es la -O3, es decir, la que ya viene en el programa original
+          
 15. 
 
 
