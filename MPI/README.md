@@ -29,15 +29,15 @@ Estando conectados a guane (ssh guane):
 
 1. Inicialmente descargamos el archivo .zip que contiene el programa en C, lo copiamos en el espacio de guane y lo descomprimimos con el siguiente comando:
 
-   unzip  MPI-master-heat-equation-c.zip
+      unzip  MPI-master-heat-equation-c.zip
    
 2.  Nos ubicamos en un nodo:
 
-   srun -n 8 --pty /bin/bash
+      srun -n 8 --pty /bin/bash
    
 3. Cargamos el módulo de mpi:
 
-  module load devtools/mpi/openmpi/3.1.4
+     module load devtools/mpi/openmpi/3.1.4
    
 4.  Nos ubicamos en la subcarpeta /heat-equation/c que se encuentra dentro de la carpeta resultante de descomprimir el archivo cargado en el paso 1.
   
@@ -46,7 +46,7 @@ Estando conectados a guane (ssh guane):
    ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/66f545c3-69cc-4b95-87d7-83b96f8b11ed)
 
    
-7.  Ejecutamos el programa con el siguiente comando (con 2 procesos):
+6.  Ejecutamos el programa con el siguiente comando (con 2 procesos):
 
   mpirun -np 2 ./heat_mpi
 
@@ -54,7 +54,7 @@ Estando conectados a guane (ssh guane):
 
   En este caso el tiempo fue de: 36.964 sg
   
-8.  Ahora, hacemos la ejecución usando el campo inicial con el archivo  bottle.dat:
+7.  Ahora, hacemos la ejecución usando el campo inicial con el archivo  bottle.dat:
 
    mpirun -np 2 ./heat_mpi bottle.dat
 
@@ -62,7 +62,7 @@ Estando conectados a guane (ssh guane):
 
  En este caso el tiempo fue de: 37.401 sg
  
-9.  Probamos dando el número de pasos de tiempo:
+8.  Probamos dando el número de pasos de tiempo:
 
     mpirun -np 2 ./heat_mpi bottle.dat 1000
 
@@ -71,7 +71,7 @@ Estando conectados a guane (ssh guane):
 
     En este caso el tiempo fue de: 75.787  sg
   
-10.  También hacemos la ejecución dando las dimensiones y pasos de tiempo del patrón predeterminado:
+9.  También hacemos la ejecución dando las dimensiones y pasos de tiempo del patrón predeterminado:
 
     mpirun -np 2 ./heat_mpi 800 800 1000
     
@@ -79,7 +79,7 @@ Estando conectados a guane (ssh guane):
 
     En este caso el tiempo fue de: 76.758 sg
     
-11. Cada una de las anteriores ejecuciones produce una serie de imagenes en formato PNG, a continuación se muestran algunas de ellas correspondientes a las ejecuciones con mejor y peor desempeño respectivamente.
+10. Cada una de las anteriores ejecuciones produce una serie de imagenes en formato PNG, a continuación se muestran algunas de ellas correspondientes a las ejecuciones con mejor y peor desempeño respectivamente.
 
     Mejor desemepeño (pt 7):
     
@@ -97,24 +97,31 @@ Estando conectados a guane (ssh guane):
 
     MODIFICACIONES
     
-13. Si cambiamos el número de procesos a la hora de ejecutar el programa, vemos una diferencia en los tiempos de ejecución, los resultados quedan de la siguiente manera:
+11. Si cambiamos el número de procesos a la hora de ejecutar el programa, vemos una diferencia en los tiempos de ejecución, los resultados quedan de la siguiente manera:
 
       X(# prcs)-------->T(sg)
 
       2-----------------36.964
+    
       4-----------------5.202
+    
       8-----------------63.902
+    
 
     El mejor desempeño se obtiene cuando se utilizan 4 procesos.
     
-14. Si cambiamos la opción de optimización a la hora de compilar (abriendo el archivo Makefile y cambiando -O3 por cada una de las distintas opciones), tenemos los siguientes resultados:
+13. Si cambiamos la opción de optimización a la hora de compilar (abriendo el archivo Makefile y cambiando -O3 por cada una de las distintas opciones), tenemos los siguientes resultados:
 
     Opción de compilación ----------> T(sg)
 
     ninguna--------------------------21.554
+    
     -O1------------------------------39.441
+    
     -O2------------------------------9.523
+    
     -O3------------------------------5.202
+    
 
     La mejor opción de optimización en la compilación es la -O3, es decir, la que ya viene en el programa original
     
