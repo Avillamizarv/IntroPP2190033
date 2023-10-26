@@ -81,14 +81,14 @@ Estando conectados a guane (ssh guane):
     
 10. Cada una de las anteriores ejecuciones produce una serie de imagenes en formato PNG, a continuación se muestran algunas de ellas correspondientes a las ejecuciones con mejor y peor desempeño respectivamente.
 
-          Mejor desemepeño (pt 7):
+          Mejor desemepeño (pt 6):
           
     ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/d706faa8-99b1-4ef9-8035-b520bcaa863e)
     ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/690b86ff-2b65-4e50-8e5d-4e93ccf9247a)
     ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/bfaf56e6-8d9b-42b8-9193-cf097db63583)
       
       
-          Peor desempeño (pt 10):
+          Peor desempeño (pt 9):
       
     ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/efacadfe-20a6-4589-8672-46ccb2a2f0f8)
     ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/6e91114d-3ad2-4e9e-8ba1-693bb1933a0f)
