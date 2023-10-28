@@ -110,7 +110,7 @@ Estando conectados a guane (ssh guane):
 
           El mejor desempeño se obtiene cuando se utilizan 4 procesos.
     
-13. Si cambiamos la opción de optimización a la hora de compilar (abriendo el archivo Makefile y cambiando -O3 por cada una de las distintas opciones), tenemos los siguientes resultados:
+12. Si cambiamos la opción de optimización a la hora de compilar (abriendo el archivo Makefile y cambiando -O3 por cada una de las distintas opciones), tenemos los siguientes resultados:
 
           Opción de compilación ----------> T(sg)
       
@@ -125,7 +125,7 @@ Estando conectados a guane (ssh guane):
       
           La mejor opción de optimización en la compilación es la -O3, es decir, la que ya viene en el programa original
           
-15. 
+13. Adicionalmente, se hizo una modificación en la función evolve_edges de  
 
 
 
