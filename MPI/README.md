@@ -125,7 +125,13 @@ Estando conectados a guane (ssh guane):
       
           La mejor opción de optimización en la compilación es la -O3, es decir, la que ya viene en el programa original
           
-13. Adicionalmente, se hizo una modificación en la función evolve_edges de  
+13. Adicionalmente, se hizo una modificación en la función evolve_edges del archivo core.c para reducir duplicidad de código en los for que contenía dicha función y se les aplicó paralelización con OMP. Por lo demás, no se hicieron más cambios ya que tras analizar los códigos se observó que ya contaban con opciones de paralelización con MPI. El resultado obtenido tras la modificación realizada mejoró un poco el tiempo de ejecución y se muestra a continuación:
+    Tiempo: 5 sg
+Se ejecutó con la combinación que daba mejores resultados (optimización -03 y 4 procesos).
+
+ARCHIVOS:
+
+En este directorio se encuentra el código modificado dentro de un .zip y el archivo .sbatch para la ejecución del programa.
 
 
 
