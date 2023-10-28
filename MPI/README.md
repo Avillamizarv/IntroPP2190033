@@ -4,7 +4,7 @@ Integrantes:
 
 Adriana Villamizar Vera - 2190033
 
-Gysselis Vasquez Garcés 
+Gysselis Vasquez Garcés - 2192941
 
 INTRODUCCIÓN
 
