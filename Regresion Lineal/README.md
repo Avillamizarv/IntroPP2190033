@@ -60,15 +60,23 @@ Desde el programa principal (regression.cpp) se lee el txt de entrada previament
 
 La compilación y ejecución del programa se hizo en Guane, usando 4 como número de procesos. Para compilar se ejecuta el siguiente comando:
 
-g++ -std=c++11 regresion.cpp -o regresion 
+   g++ -std=c++11 regresion.cpp -o regresion 
 
 Para ejecutar el programa se ejecuta:
 
-./regresion
+   ./regresion
 
 ### Paralelización con OpenMP
 
-Se utiliza la directiva #pragma omp parallel for para paralelizar el bucle for que entrena el modelo. Las directivas #pragma omp atomic se utilizan para asegurar que las operaciones de actualización de la pendiente y la intersección se realicen de manera atómica.
+Se utiliza la directiva 
+
+  #pragma omp parallel for
+
+para paralelizar el bucle for que entrena el modelo. Las directivas 
+
+   #pragma omp atomic
+
+se utilizan para asegurar que las operaciones de actualización de la pendiente y la intersección se realicen de manera atómica.
 
 ### Paralelización con CUDA
 
