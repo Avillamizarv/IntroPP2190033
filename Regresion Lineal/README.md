@@ -1,25 +1,71 @@
 # Proyecto final 
 
 ## Regresión lineal
-En este directorio se encuentra implementación de un programa para multiplicación de matrices en lenguaje C secuencial (multiplyMatrix.c) y la misma solución pero con programación paralela (omp_multiplyMatrix.c) y el análisis comparativo entre los tiempos de ejecución de ambas soluciones.
 
-Se toma como base el código fuente recomendado que se encuentra en el siguiente enlace: https://www.geeksforgeeks.org/c-matrix-multiplication/ 
+### Integrantes:
 
-Se hacen algunas modificaciones para recibir como entrada las dimensiones de ambas matrices y se llenan con números aleatorios entre 0 y 10.
+Gysselis Vásquez.
 
-Para la solución utilizando paralelismo, se agrega sobre los ciclos for de la multiplicación de matrices la notación #pragma omp parallel for.
+César Hurtado
 
-Ambos programas se corrieron en el equipo local con las siguientes especificaciones:
+Adriana Villamizar 
 
-Procesador: intel corei3-1005G1 CPU
 
-Frecuencia: 1.20 GHz
+En este directorio se encuentra el planteamiento y desarrollo del proyecto final de la materia Introducción a la computación paralela. El tema que se trata es Aprendizae automático paralelo, específicamente, un algoritmo de regresión lineal.
 
-RAM: 12 GB
+## Regresión Lineal
 
-Al ejecutar la solución programada secuencialmente, el tiempo de ejecución es de   3.000000 ms
+La Regresión Lineal es un método estadístico para modelar las relaciones entre una variable dependiente y un conjunto dado de variables independientes. 
+
+Existen dos tipos de regresión lineal:
+
+### Regresión lineal simple:
+
+Es un método para predecir una respuesta utilizando una única característica. Es uno de los modelos de aprendizaje automático más básicos 
+Trata de encontrar una función lineal que prediga el valor de la respuesta (y) con la mayor precisión posible en función de la característica o variable independiente (x).
+
+Para crear el modelo, se debe "aprender" o estimar los valores de los coeficientes de regresión b_0 y b_1, una vez estimados estos coeficientes, se puede usar el modelo para predecir las respuestas de otros casos.
+
+
+### Regresión lineal múltiple:
+
+Intenta modelar la relación entre dos o más características y una respuesta ajustando una ecuación lineal a los datos observados.
+
+Considere un conjunto de datos con p características (o variables independientes) y una respuesta (o variable dependiente).
+Además, el conjunto de datos contiene n filas/observaciones. Dada X como una matriz de características:
+
+![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/14ef98b1-1c02-4157-ab4c-0ce961a6e653)
+
+ y un vector con las respuestas para cada observación:
+
+ ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/d75826d0-08f8-4590-a794-85d0a35211c6)
+
+ La línea de regresión para p características es representada como:
+ 
+ ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/02ac499a-d5a6-44b9-9f0e-9ef4d7f44163)
+
+donde h(x_i) es el valor predecido para cada caso y b_0, b_1, ... b_p son los coeficientes de regresión.
 
 ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/daad72b5-d6d0-4730-9dfa-a0e8e618ba35)
+
+
+De forma resumida, el modelo de regresión puede representarse como:
+
+![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/0401559e-80a9-4f80-bd6d-3b38e3628aaa)
+
+
+### Algoritmo
+
+### Implementación en C
+
+### Compilación y ejecución
+
+### Paralelización con OpenMP
+
+### Resultados
+
+### Conclusiones
+
 
 
 Mientras que, al ejecutar la solución con omp, el tiempo empleado es de 2.000093 ms
@@ -28,17 +74,4 @@ Mientras que, al ejecutar la solución con omp, el tiempo empleado es de 2.00009
 
 
 
-Evidentemente, hacerlo de forma paralela tiene ventaja de tiempo.
 
-
-Ahora, si se hace la misma prueba aumentando la cantidad de datos, es decir, con matrices de mayor dimensión (100x100 y 100 x 200), los resultados son los siguientes:
-
-Secuencial:  15 ms
-
-![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/3034fdd0-98a2-453c-aad9-a90224f7ffdc)
-
-Paralelo:   4.999876 ms
-
-![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/f3bf5c5e-5376-4a4a-a7a3-6ef4b8e7a151)
-
-En este caso, se hace un poco más notable la diferencia en los tiempos, evidenciando que a medida que crece la data, el rendimiento en paralelo es mejor.
