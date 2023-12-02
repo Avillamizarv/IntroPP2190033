@@ -54,9 +54,21 @@ De forma resumida, el modelo de regresión puede representarse como:
 
 ### Algoritmo
 
-### Implementación en C
+### Implementación en C++
+
+Se generan los datos de input para el programa principal a través de otro programa (entrada.cpp) y se guardan en un archivo de texto.
+
+Desde el programa principal (regression.cpp) se lee el txt de entrada previamente generado, se entrena el modelo con parámetros (epochs y learning rate) definidos y se guarda el modelo generado en un archivo de salida.
 
 ### Compilación y ejecución
+
+La compilación y ejecución del programa se hizo en Guane, usando 4 como número de procesos. Para compilar se ejecuta el siguiente comando:
+
+g++ -std=c++11 regresion.cpp -o regresion 
+
+Para ejecutar el programa se ejecuta:
+
+./regresion
 
 ### Paralelización con OpenMP
 
