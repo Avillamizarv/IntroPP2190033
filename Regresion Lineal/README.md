@@ -95,6 +95,20 @@ Usando el código paralelizado con omp y con CUDA se obtiene lo siguiente:
 
 ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/e06b957d-f8fd-4c3d-b167-e2ef758ca02a)
 
+Para compilar y ejecutar se ejecuta lo siguiente:
+
+    export PATH=/opt/ohpc/pub/devtools/cuda/12.1/bin:$PATH
+    nvcc -o Reg_Parall Reg_Parall.cu
+    ./Reg_Parall
+    
+### Paralelización con MPI:
+
+Se realiza la compilación con el siguiente comando:
+
+    mpic++ RecressionMPI.cpp -o regresionmpi
+
+![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/5f485890-9687-4dd5-b7e1-fa023af6249e)
+
 
 ### Resultados
 
