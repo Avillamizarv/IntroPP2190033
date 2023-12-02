@@ -4,10 +4,8 @@
 
 ### Integrantes:
 
-Gysselis Vásquez.
-
+Gysselis Vásquez
 César Hurtado
-
 Adriana Villamizar 
 
 
@@ -52,8 +50,6 @@ De forma resumida, el modelo de regresión puede representarse como:
 ![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/0401559e-80a9-4f80-bd6d-3b38e3628aaa)
 
 
-### Algoritmo
-
 ### Implementación en C++
 
 Se generan los datos de input para el programa principal a través de otro programa (entrada.cpp) y se guardan en un archivo de texto.
@@ -72,15 +68,15 @@ Para ejecutar el programa se ejecuta:
 
 ### Paralelización con OpenMP
 
+### Paralelización con CUDA
+
 ### Resultados
 
 ### Conclusiones
 
 
 
-Mientras que, al ejecutar la solución con omp, el tiempo empleado es de 2.000093 ms
 
-![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/aa99526f-37da-4d7e-af81-4b22cc88f85f)
 
 
 
