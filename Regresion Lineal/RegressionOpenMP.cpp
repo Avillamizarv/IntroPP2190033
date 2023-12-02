@@ -1,37 +1,37 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <chrono>
+#include <omp.h>
 
-// Estructura para almacenar los resultados del modelo  de la regresión lineal
 struct LinearRegressionResult {
-    double slope;     // Pendiente
-    double intercept;  // Intersección
+    double slope;    
+    double intercept;  
 };
 
-// Función para predecir el resultado usando los resultados de la regresión lineal
 double predict(const double& feature, const LinearRegressionResult& result) {
     return result.slope * feature + result.intercept;
 }
 
-// Función para entrenar el modelo de regresión lineal
 LinearRegressionResult trainModel(const std::vector<double>& X, const std::vector<double>& y, int epochs, double learningRate) {
     size_t numSamples = X.size();
 
     double slope = 0.0;
     double intercept = 0.0;
 
-    //Se agrega la notación de paralelización del for con omp
-    #pragma omp parallel for
     for (int epoch = 0; epoch < epochs; ++epoch) {
+
+        //Se agrega la notación de paralelización con omp
+        #pragma omp parallel for
         for (size_t i = 0; i < numSamples; ++i) {
-            // Realizar una predicción
             double y_pred = predict(X[i], {slope, intercept});
-            
-            // Calcular el error
+
             double error = y_pred - y[i];
 
-            // Actualizar los parámetros (pendiente e intersección) utilizando el descenso de gradiente
+            #pragma omp atomic
             slope -= learningRate * error * X[i];
+
+            #pragma omp atomic
             intercept -= learningRate * error;
         }
     }
@@ -40,21 +40,18 @@ LinearRegressionResult trainModel(const std::vector<double>& X, const std::vecto
 }
 
 int main() {
-    
-    // Abrir el archivo de entrada
+    auto start = std::chrono::high_resolution_clock::now();
+
     std::ifstream inputFile("input.txt");
     if (!inputFile.is_open()) {
         std::cerr << "Error al abrir el archivo de entrada." << std::endl;
         return 1;
     }
 
-    // Vectores para almacenar los datos de entrada (X) y salida (y)
     std::vector<double> X;
     std::vector<double> y;
     double value;
 
-    
-    // Leer los datos del archivo de entrada
     while (inputFile >> value) {
         X.push_back(value);
         inputFile >> value;
@@ -63,14 +60,10 @@ int main() {
 
     inputFile.close();
 
-    
-    // Configurar los parámetros del modelo
     int epochs = 1000;
     double learningRate = 0.01;
-    // Entrenar el modelo de regresión lineal
     LinearRegressionResult result = trainModel(X, y, epochs, learningRate);
 
-    // Escribir los resultados en el archivo de salida
     std::ofstream outputFile("output.txt");
     if (!outputFile.is_open()) {
         std::cerr << "Error al abrir el archivo de salida." << std::endl;
@@ -78,11 +71,15 @@ int main() {
     }
 
     outputFile << "Pendiente (m): " << result.slope << std::endl;
-    outputFile << "Intersección (b): " << result.intercept << std::endl;
+    outputFile << "IntersecciÃ³n (b): " << result.intercept << std::endl;
 
     outputFile.close();
 
     std::cout << "El modelo se ha guardado en 'output.txt'" << std::endl;
+
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = end - start;
+    std::cout << "Tiempo de ejecución: " << elapsed.count() << "s" << std::endl;
 
     return 0;
 }
