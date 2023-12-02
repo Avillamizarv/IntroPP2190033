@@ -98,6 +98,9 @@ Usando el código paralelizado con omp y con CUDA se obtiene lo siguiente:
 
 ### Resultados
 
+![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/869975aa-bf61-4510-a25b-f461e1209a53)
+
+
 ### Conclusiones
 
 
