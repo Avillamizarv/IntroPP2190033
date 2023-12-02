@@ -46,8 +46,6 @@ Además, el conjunto de datos contiene n filas/observaciones. Dada X como una ma
 
 donde h(x_i) es el valor predecido para cada caso y b_0, b_1, ... b_p son los coeficientes de regresión.
 
-![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/daad72b5-d6d0-4730-9dfa-a0e8e618ba35)
-
 
 De forma resumida, el modelo de regresión puede representarse como:
 
