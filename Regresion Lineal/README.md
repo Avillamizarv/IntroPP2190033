@@ -117,7 +117,7 @@ Se realiza la compilación con el siguiente comando:
 
 ### Conclusiones
 
-
+De manera general observamos que la mejor opción para paralelizar algotimos de este tipo es CUDA, ya que reduce significamente los tiempos de ejecución en comparación a MPI u OMP. Esto se evidenció tanto para entradas pequeñas como para entradas bastante grandes. 
 
 
 
