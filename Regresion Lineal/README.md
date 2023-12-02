@@ -68,6 +68,8 @@ Para ejecutar el programa se ejecuta:
 
 ### Paralelización con OpenMP
 
+Se utiliza la directiva #pragma omp parallel for para paralelizar el bucle for que entrena el modelo. Las directivas #pragma omp atomic se utilizan para asegurar que las operaciones de actualización de la pendiente y la intersección se realicen de manera atómica.
+
 ### Paralelización con CUDA
 
 ### Resultados
