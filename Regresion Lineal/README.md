@@ -80,6 +80,15 @@ se utilizan para asegurar que las operaciones de actualización de la pendiente 
 
 ### Paralelización con CUDA
 
+Al hacer uso de CUDA con el programa original (sin paralelización con OMP) se obtienen los siguientes resultados:
+
+![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/2b84dccb-92fe-452f-a94c-a5ddd58fdba5)
+
+Usando el código paralelizado con omp y con CUDA se obtiene lo siguiente:
+
+![image](https://github.com/Avillamizarv/IntroPP2190033/assets/108444542/e06b957d-f8fd-4c3d-b167-e2ef758ca02a)
+
+
 ### Resultados
 
 ### Conclusiones
