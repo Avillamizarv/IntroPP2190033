@@ -2,6 +2,9 @@
 
 ## Regresión lineal
 
+## Link del video en youtube: 
+https://youtu.be/IEMx5UARpYQ 
+
 ### Integrantes:
 
 Gysselis Vásquez
